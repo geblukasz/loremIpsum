@@ -1,10 +1,7 @@
 
-package pl.akademiakodu.loremipsum.model;
+package pl.akademiakodu.loremipsum.Model;
 
 import pl.akademiakodu.loremipsum.LoremIpsum;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class LoremPL implements LoremIpsum {
 

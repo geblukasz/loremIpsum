@@ -2,21 +2,27 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="Lukasz Gebicki">
+    <meta name="description" content="Lorem Ipsum Generator">
+    <meta name="keywords" content="lorem,ipsum,generator">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="home.css"/>
+
     <title>Title</title>
 </head>
 <body>
-    <form action="/generate" th:method="post">
-        <textarea rows="10" cols="50">
-            Lorem lorem lorem
-        </textarea>
-        <br>
-        <input type="number" value="5" step="1">
+<article>
+    <form action="/" th:method="post">
+        <textarea disabled th:text=${lorem} rows="20" cols="50"/><br>
+        <input name="number" type="number" value="2" step="1"><br>
+        <input type="submit" value="GENERATE!"><br>
         <select name="option">
             <option value="1">PARAGRAPHS</option>
             <option value="2">SENTENCES</option>
-            <option value="3">WORDS</option>
+            <option value="3">WORD</option>
         </select>
-        <input type="submit" value="GENERATE!">
     </form>
+</article>
 </body>
 </html>
