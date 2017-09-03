@@ -39,12 +39,12 @@ public class LoremPL implements LoremIpsum {
     @Override
     public String generateWords(int number) {
         StringBuilder builder = new StringBuilder();
-        int wordsCounter = 0;
-        while(wordsCounter<number){
-            builder.append(lorem.substring(0,lorem.indexOf(" ")+1));
-            wordsCounter++;
+        String[] words = new String[number];
+        for (int i = 0; i<number; i++){
+            builder.append(lorem.substring(0,lorem.indexOf(" ")+1)).toString();
+
         }
-        return builder.toString();
+        return words.toString();
     }
 
     public static void main(String[] args) {

@@ -15,13 +15,13 @@
 <article>
     <form action="/" th:method="post">
         <textarea disabled th:text=${lorem} rows="20" cols="50"/><br>
-        <input name="number" type="number" value="2" step="1"><br>
-        <input type="submit" value="GENERATE!"><br>
+        <input name="number" type="number" value="2" step="1">
         <select name="option">
             <option value="1">PARAGRAPHS</option>
             <option value="2">SENTENCES</option>
-            <option value="3">WORD</option>
-        </select>
+            <option value="3">WORDS</option>
+        </select><br>
+        <input type="submit" value="GENERATE!"><br>
     </form>
 </article>
 </body>
