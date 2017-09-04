@@ -5,7 +5,8 @@ public class Form {
     private int number;
     private int option;
 
-    public Form(){}
+    public Form() {
+    }
 
     public Form(int number, int option) {
         this.number = number;

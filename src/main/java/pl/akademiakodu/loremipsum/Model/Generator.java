@@ -2,15 +2,29 @@ package pl.akademiakodu.loremipsum.Model;
 
 import pl.akademiakodu.loremipsum.LoremIpsum;
 
-import java.util.Arrays;
 
-public class Generator implements LoremIpsum{
+public class Generator implements LoremIpsum {
 
-    public Generator(){}
+    public Generator() {
+    }
 
 
+    public String lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam vel sollicitudin dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse ullamcorper, arcu quis laoreet aliquam, tortor diam egestas ante, non posuere tellus est eu nibh. Nunc suscipit est porttitor tortor congue, ac ornare elit scelerisque. Mauris lobortis, justo efficitur interdum rutrum, velit nulla tincidunt mauris, in accumsan ex nibh et magna. Ut faucibus hendrerit sagittis. Vestibulum hendrerit nunc ac metus venenatis, id pellentesque eros faucibus. Sed lobortis, dolor at fringilla convallis, erat neque tincidunt libero, vitae finibus libero mauris in arcu. Praesent at lobortis ex, ut finibus arcu. Curabitur mi tellus, sollicitudin nec justo ut, dictum blandit quam. Vivamus tempus porta faucibus. Nullam in ex tincidunt, ullamcorper ex at, imperdiet orci. Nulla efficitur neque ut auctor molestie.";
 
-    public String lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    public String cutByChar(int number, char charHelper) {
+        int wordCounter = 0;
+        int charCounter = 0;
+        for (int i = 0; i < lorem.length() - 1; i++) {
+            if (lorem.charAt(i) == charHelper) {
+                wordCounter++;
+            }
+            if (wordCounter == number) {
+                break;
+            }
+            charCounter++;
+        }
+        return lorem.substring(0, charCounter) + charHelper;
+    }
 
     @Override
     public String generateParagraphs(int number) {
@@ -23,22 +37,14 @@ public class Generator implements LoremIpsum{
 
     @Override
     public String generateSentences(int number) {
-        StringBuilder sentenceBuilder = new StringBuilder();
-        int sentenceCounter = 0;
-        while(sentenceCounter<number){
-            sentenceBuilder.append(lorem.substring(0,lorem.indexOf(".")+2));
-            sentenceCounter++;
-        }
-        return sentenceBuilder.toString();
+        String sentence = cutByChar(number, '.');
+        return sentence;
     }
 
     @Override
     public String generateWords(int number) {
-        StringBuilder builder = new StringBuilder();
-        int chars = 0;
-        for (int i=0; i<number; i++){
-            builder.append(lorem.substring(0,lorem.indexOf(" ")+1)).toString();
-        }
-        return builder.toString();
+        String words = cutByChar(number, ' ');
+        return words;
     }
+
 }

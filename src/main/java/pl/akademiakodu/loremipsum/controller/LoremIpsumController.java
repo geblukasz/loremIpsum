@@ -12,15 +12,14 @@ import pl.akademiakodu.loremipsum.Model.Generator;
 public class LoremIpsumController {
 
     @GetMapping("/")
-    public String home(){
+    public String home() {
         return "home";
     }
 
     @PostMapping("/")
-    public String home(@ModelAttribute Form form, ModelMap modelMap)
-    {
+    public String home(@ModelAttribute Form form, ModelMap modelMap) {
         Generator generator = new Generator();
-        switch(form.getOption()){
+        switch (form.getOption()) {
             case 1:
                 modelMap.addAttribute("lorem", generator.generateParagraphs(form.getNumber()));
                 break;
