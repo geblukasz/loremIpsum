@@ -1,7 +1,7 @@
 body{
     padding: 10px;
     font-family: 'Sedgwick Ave Display', cursive;
-    background-image: url('backgroundPicture.jpg');
+    background-color: #85b4ff;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
