@@ -1,7 +1,7 @@
 body{
     padding: 10px;
     font-family: 'Sedgwick Ave Display', cursive;
-    background-image: url("https://cdn.pixabay.com/photo/2017/08/23/11/25/notebook-2672549_960_720.jpg");
+    background-image: url('backgroundPicture.jpg');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
